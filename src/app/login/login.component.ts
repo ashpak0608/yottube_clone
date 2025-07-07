@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
     this.http.post('http://localhost:3000/login', this.loginForm.value)
       .subscribe((res: any) => {
         if (res.success === false) {
-          alert('❌' + res.error); 
+          alert('sorry' + res.error); 
         } else {
-          alert('✅ User created!');
+          alert(' congratulation User created!');
           this.loginForm.reset();
         }
       }, (err) => {
