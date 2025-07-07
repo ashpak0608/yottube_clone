@@ -1,0 +1,35 @@
+<div class="bg-login">
+    <div id="container">
+        <div id="left">
+           <img class="resp_img" src="assets/img/banner/login_imgs.png"> 
+        </div>
+        <div id="right">
+          <h1 id="login">Login your account</h1><br>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+          <input type="email" id="email" class="client-info" placeholder="username" formControlName="username">
+          <label for="email">User name</label>
+          <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" style="color: red;">Username is required</span>
+          <input type="password" id="password" class="client-info" placeholder="password" formControlName="password">
+          <label for="password">Password</label>
+                    <span *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" style="color: red;">Password  is required</span>
+
+          <!-- <input type="submit" id="submit" class="client-info" value="Submit"> -->
+          <button type="submit" id="submit" class="client-info" [disabled]="loginForm.invalid"> Submit</button>
+
+          <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+        </form>
+
+          
+          <div class="socials">
+            <button class="social social_imd" id="facebook"> <span><img class="social_img" src="assets/img/social/google.png"></span> <p class="social_txt">Google</p> </button>
+            <button class="social social_imd" id="google"> <span><img class="social_img" src="assets/img/social/facebook.png"></span>  <p class="social_txt">Facebook</p> </button>
+          </div>
+        
+        </div>
+      </div>
+</div>
+
+  
