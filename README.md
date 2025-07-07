@@ -1,27 +1,108 @@
-# YouNewapp
+# 🎬 YouTube Angular-Node Full Stack Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+This is a **full stack project** built with:
 
-## Development server
+- **Frontend:** Angular  
+- **Backend:** Node.js with Express and Prisma ORM (using MySQL/MariaDB database)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 📁 **Project Structure**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+youtube/
+├── backend/ # Node.js + Prisma backend
+├── src/ # Angular frontend source code
+├── package.json
+└── README.md
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🚀 **Setup Guide**
 
-## Running end-to-end tests
+### ✅ **Prerequisites (Install these first)**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Node.js** (v14 or higher recommended)  
+   [Download Node.js](https://nodejs.org)
 
-## Further help
+2. **npm** (comes with Node.js)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. **Angular CLI**
+
+Install Angular CLI globally if not installed:
+
+Frontend Project complete setup : 
+
+1. git clone git@github.com:abid1505/yottube_clone.git   //for linux machine 
+2. git clone https://github.com/abid1505/yottube_clone.git  //for windows machine
+
+3. cd youtube
+
+4. npm install -y
+
+5. npm install -g @angular/cli   //optional if not installed with package.json
+
+6. ng serve     // to run the project frontend
+
+7.  http://localhost:4200/     // bydefault it will hit this project
+
+
+Backend project setup : 
+
+1. Configure database connection
+
+Open your .env file in the backend folder.
+
+Update DATABASE_URL with your MySQL/MariaDB credentials. Example:
+
+DATABASE_URL="mysql://username:password@localhost:3306/databasename"
+Replace:
+
+username with your DB username (e.g. root or myuser)
+
+password with your DB password
+
+databasename with your database (e.g. logindata)
+
+
+2. npx prisma migrate dev --name init   // Create tables in your database based on your Prisma schema.
+
+3. node index.js   //this will run the project 
+
+4. http://localhost:3000/                //url will hit this 
+
+
+5. Testing the Backend API with Postman
+
+Open Postman.
+
+Create a new POST request.
+
+URL: http://localhost:3000/login
+
+Headers: Content-Type: application/json
+
+Body (raw JSON):
+
+{
+  "username": "testuser",
+  "password": "testpass"
+}
+Click Send to test the API.
+
+
+
+
+
+*Final Steps to Run Both Projects
+Start your database server (MySQL/MariaDB)*
+
+Run backend server:
+
+cd backend
+node index.js
+Run frontend Angular app:
+
+cd youtube
+ng serve

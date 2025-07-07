@@ -17,9 +17,7 @@ app.post('/login', async (req, res) => {
   });
 
   if (existingUser) {
-    // return res.status(400).json({ error: 'Username already present' });
-      return res.status(200).json({ success: false, error: 'Username already present' });
-
+    return res.status(200).json({ success: false, error: 'Username already present' });
   }
 
   const newUser = await prisma.loginUser.create({
@@ -30,5 +28,5 @@ app.post('/login', async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
+  console.log('Server running at ');
 });
