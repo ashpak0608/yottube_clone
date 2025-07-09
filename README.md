@@ -57,6 +57,7 @@ Open your .env file in the backend folder.
 Update DATABASE_URL with your MySQL/MariaDB credentials. Example:
 
 DATABASE_URL="mysql://username:password@localhost:3306/databasename"
+
 Replace:
 
 username with your DB username (e.g. root or myuser)
